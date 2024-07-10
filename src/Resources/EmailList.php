@@ -90,4 +90,10 @@ class EmailList extends ApiResource
 
         return $this;
     }
+
+    public function unsubscribe(string $email)
+    {
+        return $this->mailcoach->post("email-lists/{$this->uuid}/unsubscribe", ['email' => $email]);
+    }
+    
 }
